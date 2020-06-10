@@ -17,6 +17,7 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    quotes: [2, 'single', { avoidEscape: true }]
+    quotes: [2, 'single', { avoidEscape: true }],
+    'require-await': 'off'
   }
 }
