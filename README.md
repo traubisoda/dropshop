@@ -20,3 +20,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Required wordpress plugins
+
+- woocommerce
+- WooApi (own, not the one available in the store, great naming!)
+- JWT Authentication for WP-API
