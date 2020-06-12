@@ -51,14 +51,15 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://magento.test/rest/default/V1/'
+    baseURL: 'https://wooapi.test/wp-json'
   },
   /*
    ** Build configuration
@@ -68,5 +69,30 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  /*
+   ** Auth config
+   */
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/jwt-auth/v1/token',
+            method: 'post',
+            propertyName: 'token'
+          },
+          user: {
+            url: '/wp/v2/users/me',
+            method: 'get',
+            propertyName: ''
+          }
+        }
+        // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        // autoFetchUser: true
+      }
+    }
   }
 }

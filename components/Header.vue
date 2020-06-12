@@ -11,7 +11,11 @@
       </div>
     </div>
     <div class="block">
+      <div v-if="$auth.loggedIn">
+        Logout
+      </div>
       <nuxt-link
+        v-else
         :to="{
           name: 'login'
         }"

@@ -3,7 +3,7 @@ import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api'
 
 export default function(ctx, inject) {
   const api = new WooCommerceRestApi({
-    url: process.env.WOO_URL,
+    url: process.env.API_URL,
     consumerKey: process.env.WOO_KEY,
     consumerSecret: process.env.WOO_SECRET,
     version: 'wc/v3',
